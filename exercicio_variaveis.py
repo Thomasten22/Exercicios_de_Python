@@ -1,0 +1,13 @@
+nome = str('Thomas Victor ')
+sobrenome = str('Santos de Jesus')
+idade = int(27)
+ano_nascimento = str('18/06/1999')
+maior_de_idade = bool(idade >= 18)
+altura_metros =float(1.85)
+
+print('Nome: ', nome)
+print('sobrenome: ', sobrenome)
+print('idade : ', idade)
+print('ano de nascimento: ', ano_nascimento)
+print('e maior: ', maior_de_idade)
+print('altura: ', altura_metros)
