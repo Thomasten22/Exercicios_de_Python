@@ -1,52 +1,35 @@
-"""
-Faça um jogo para o usuário adivinhar qual
-a palavra secreta.
-- Você vai propor uma palavra secreta
-qualquer e vai dar a possibilidade para
-o usuário digitar apenas uma letra.
-- Quando o usuário digitar uma letra, você 
-vai conferir se a letra digitada está
-na palavra secreta.
-    - Se a letra digitada estiver na
-    palavra secreta; exiba a letra;
-    - Se a letra digitada não estiver
-    na palavra secreta; exiba *.
-Faça a contagem de tentativas do seu
-usuário.
-"""
-
-secret = 'secreta'
-letras_acertadas = ''
-numero_tentativas = 0
+secreta = 'thomas' # palavra secreta (em minúsculo para facilitar)
+letras_acertadas = '' # variavel que armazena as letras acertadas
+numero_tentativas = 0 # contador de tentativas 
 
 print('Jogo da palavra secreta!')
 
 while True:
-    letra_digitada = input('Digite uma letra: ')
-    numero_tentativas += 1
+    letra_digitada = input('Digite uma letra: ').lower() # aqui recebemos a letra escolhida e convertemos para minúsculo
+    numero_tentativas += 1 # aumenta o numero de tentativas assim que o codigo recebe a primeira letra do usuario 
 
     # Validação da entrada (apenas 1 letra)
-    if len(letra_digitada) > 1:
+    if len(letra_digitada) > 1: # aqui é um verificador se o usuario digitou apenas 1 letras se nao digitou ele responde que digitou letras demais e volta para digitar letra novamente
         print('Digite apenas uma letra.')
-        continue
+        continue # aqui continua o laço voltando ele para o inicio 
 
     # Guarda a letra se ela existir na palavra secreta
-    if letra_digitada in secret:
-        letras_acertadas += letra_digitada
+    if letra_digitada in secreta: # ele verifica se a letra digitada esta na palavra secreta, isso é um verificador 
+        letras_acertadas += letra_digitada  # aqui ele alimenta a letra acertada com a letra digitada fora do laço while
 
-    # Monta a exibição da palavra atual (* ou letra)
-    palavra_formada = ''
-    for letra_secreta in secret:
-        if letra_secreta in letras_acertadas:
-            palavra_formada += letra_secreta
-        else:
-            palavra_formada += '*'
+    # Monta a exibição da palavra atual (_ ou letra)
+    palavra_formada = ''  # nova variavel vazia criada para receber os (_) colocando aonde nao tem as letras acertadas.
+    for letra_secreta in secreta: # outro verificador vendo se tem a letra escolhida na palavra secreta 
+        if letra_secreta in letras_acertadas: #  se a letra secreta estiver na letra acertada ele alimenta a palavra formada com a letra 
+            palavra_formada += letra_secreta # aqui ele esta alimentando o palavra formada com a letra secreta
+        else: # aqui ele verifica que nao acertou a palavra secreta e adiciona a _ nas palavras acertadas 
+            palavra_formada += '_' # aqui ele esta adicionando a _ na palavra formada 
 
-    print('Palavra formatada:', palavra_formada)
+    print('Palavra formatada:', palavra_formada) # <- ATENÇÃO AQUI: alinhado com o 'for' (fora dele)
 
     # Verifica se o usuário adivinhou todas as letras
-    if palavra_formada == secret:
+    if palavra_formada == secreta: # aqui vemos que acertamos todas as letras e recebemos o premio por isso
         print('VOCÊ GANHOU!! PARABÉNS!')
-        print('A palavra era:', secret)
+        print('A palavra era:', secreta)
         print('Tentativas:', numero_tentativas)
         break
