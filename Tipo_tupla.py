@@ -15,6 +15,6 @@ print(nomes)
 '''alterando novamente para list'''
 nomes = ['Thomas', 'Leticia', 'Carlos' ] # esta formatado no tipo lista modo mutavel, conseguimos alterar itens dessa forma
 nomes = tuple(nomes)#alterado para tupla e ficando imutavel e nao conseguimos alterar mais nada
-nomes - list(nomes) #alterei para modo lista novamente e podendo ser alterado
+nomes = list(nomes) #alterei para modo lista novamente e podendo ser alterado
 print(nomes[0])
 print(nomes)
