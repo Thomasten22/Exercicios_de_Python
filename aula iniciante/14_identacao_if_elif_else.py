@@ -14,7 +14,7 @@ if cond1:
     print('Codigo para condicao 1')
     print('Codigo para condicao 1')
 elif cond2:
-    print ('codigo para condicao 2')
+    pass
 elif cond3:
     print ('codigo para condicao 3')   
 elif cond4:

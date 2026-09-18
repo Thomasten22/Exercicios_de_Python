@@ -34,7 +34,6 @@ novo_resto = multi % 11 # faz a conta de resto com a multipicação
 
 digito2 = f'{novo_resto}' if novo_resto <= 9  else 0 
 
-
 if str(digito1) == cpf[-2] and str(digito2) == cpf[-1]: # validador se o cpf esta correto
     print('CPF valido!')
 else:
